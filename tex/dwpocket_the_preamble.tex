@@ -1,0 +1,421 @@
+
+\enableregime[utf]
+\useregime[utf]
+
+\loadmapfile[texnansi-open-dw.map]
+\loadmapfile[ec-softmaker-ttf-s.map]
+\loadmapfile[texnansi-open-dw2.map]
+
+
+
+
+\starttypescript[serif][vollkorn-serif][texnansi]
+	\definefontsynonym[VollkornSerifRegular][texnansi-Vollkorn-Regular][encoding=texnansi]
+	\definefontsynonym[VollkornSerifBold][texnansi-Vollkorn-Bold][encoding=texnansi]
+	\definefontsynonym[VollkornSerifBolditalic][texnansi-Vollkorn-BoldItalic][encoding=texnansi]
+	\definefontsynonym[VollkornSerifItalic][texnansi-Vollkorn-Italic][encoding=texnansi]
+	\definefontsynonym[VollkornSerifSlanted][texnansi-Vollkorn-Italic][encoding=texnansi]
+	\definefontsynonym[VollkornSerifBoldslanted][texnansi-Vollkorn-BoldItalic][encoding=texnansi]
+	\definefontsynonym[VollkornSerifCaps][texnansi-Vollkorn-Bold][encoding=texnansi]
+	\stoptypescript
+
+
+\starttypescript[serif][vollkorn-serif][name]
+	\usetypescript[serif,fallback]
+	\definefontsynonym[Serif][VollkornSerifRegular]
+	\definefontsynonym[SerifBold][VollkornSerifBold]
+	\definefontsynonym[SerifBoldItalic][VollkornSerifBolditalic]
+	\definefontsynonym[SerifItalic][VollkornSerifItalic]
+	\definefontsynonym[SerifSlanted][VollkornSerifSlanted]
+	\definefontsynonym[SerifBoldSlanted][VollkornSerifBoldslanted]
+	\definefontsynonym[SerifCaps][VollkornSerifCaps]
+\stoptypescript
+
+\starttypescript[sans][sigvar-sans][ec]
+	\definefontsynonym[SigvarSansRegular][texnansi-OpenSansRegular][encoding=ec]
+	\definefontsynonym[SigvarSansBold][texnansi-OpenSansBold][encoding=ec]
+	\definefontsynonym[SigvarSansBolditalic][texnansi-OpenSansBoldItalic][encoding=ec]
+	\definefontsynonym[SigvarSansItalic][texnansi-OpenSanItalic][encoding=ec]
+	\definefontsynonym[SigvarSansSlanted][texnansi-OpenSanItalic][encoding=ec]
+	\definefontsynonym[SigvarSansBoldslanted][texnansi-OpenSansBoldItalic][encoding=ec]
+	\definefontsynonym[SigvarSansCaps][texnansi-OpenSansBold][encoding=ec]
+	\stoptypescript
+
+
+\starttypescript[sans][sigvar-sans][name]
+	\usetypescript[sans,fallback]
+	\definefontsynonym[Sans][SigvarSansRegular]
+	\definefontsynonym[SansBold][SigvarSansBold]
+	\definefontsynonym[SansBoldItalic][SigvarSansBolditalic]
+	\definefontsynonym[SansItalic][SigvarSansItalic]
+	\definefontsynonym[SansSlanted][SigvarSansSlanted]
+	\definefontsynonym[SansBoldSlanted][SigvarSansBoldslanted]
+	\definefontsynonym[SansCaps][SigvarSansCaps]
+\stoptypescript
+
+\starttypescript[mono][display-mono][texnansi]
+	\definefontsynonym[DisplayMonoRegular][texnansi-BOYCOTT][encoding=texnansi]
+	\definefontsynonym[DisplayMonoBold][texnansi-DIRTYEGO][encoding=texnansi]
+	\definefontsynonym[DisplayMonoBolditalic][texnansi-goodluck][encoding=texnansi]
+	\definefontsynonym[DisplayMonoItalic][texnansi-PROPAGAN][encoding=texnansi]
+	\definefontsynonym[DisplayMonoSlanted][texnansi-Deutsch][encoding=texnansi]
+	\definefontsynonym[DisplayMonoBoldslanted][texnansi-Deutsch][encoding=texnansi]
+	\definefontsynonym[DisplayMonoCaps][texnansi-Deutsch][encoding=texnansi]
+	\stoptypescript
+
+
+\starttypescript[mono][display-mono][name]
+	\usetypescript[mono,fallback]
+	\definefontsynonym[Mono][DisplayMonoRegular]
+	\definefontsynonym[MonoBold][DisplayMonoBold]
+	\definefontsynonym[MonoBoldItalic][DisplayMonoBolditalic]
+	\definefontsynonym[MonoItalic][DisplayMonoItalic]
+	\definefontsynonym[MonoSlanted][DisplayMonoSlanted]
+	\definefontsynonym[MonoBoldSlanted][DisplayMonoBoldslanted]
+	\definefontsynonym[MonoCaps][DisplayMonoCaps]
+\stoptypescript
+
+
+
+\starttypescript[fantasy]
+	\definetypeface[fantasy][tt][mono][display-mono][default][encoding=texnansi]
+	\definetypeface[fantasy][ss][sans][sigvar-sans][default][encoding=ec]
+	\definetypeface[fantasy][rm][serif][vollkorn-serif][default][encoding=texnansi]
+\stoptypescript
+
+
+
+\usetypescript[fantasy]
+\setupbodyfont[fantasy,rm,11pt]
+
+
+
+\setupinterlinespace
+[height=.72,
+depth=.28,
+top=1.0,
+bottom=0.4,
+line=3ex]
+
+% definizione di una serie di sinonimi per cambiare font in maniera indiretta. Ad esempio:
+% {\eulbigtitle Ciccio} -> mostrerà Ciccio reso in Immortal, corpo 18
+% ----------------------------------------------------------------------------------------
+\definefont[hi][MonoBold sa 3]
+\definefont[hii][MonoBold sa 2]
+\definefont[hiii][MonoBold sa 1.7]
+\definefont[hiv][MonoBold sa 1.4]
+
+
+\definefont[legacy][SansBold]
+\definefont[legacyb][SansBold]
+\definefont[eul][SansBold]
+\definefont[eub][SansBold]
+\definefont[eulb][SansBold at 12pt]
+\definefont[eulgiant][SerifBold at 36pt]
+\definefont[eulbig][SansBold at 12pt]
+\definefont[eulbignorm][SansBold at 10pt]
+\definefont[eulbigit][SansBold]
+\definefont[eultitle][SansBold at 14pt]
+\definefont[eulbiggie][SansBold at 72pt]
+\definefont[eulbiggiex][SansBold at 24pt]
+\definefont[booksubtitlefont][SansBold at 24pt]
+\definefont[booktitlefont][SansBold at 48pt]
+
+
+%-------- definisco dei colori
+\setupcolors[state=start]
+\definecolor[grigino][r=.9,g=.9,b=.9]
+\definecolor[grigino2][r=1,g=.5,b=.1]
+\definecolor[rossoscuro][r=0.66,g=.1,b=.1]
+
+
+%----------- macro per definire il titolo di un "libro" -- rulebook e sourcebook
+\def\BookTitle#1
+	{
+		\page[odd] % titolo su una nuova pagina DISPARI
+		\setupbackgrounds[rightpage][background=color,backgroundcolor=grigino]
+		\setupbackgrounds[leftpage][background=color,backgroundcolor=grigino]
+		\vskip 6cm
+		\hairline
+		
+		\startalignment[flushright]
+		\setupbodyfont[itc-gentium, rm, 24pt]
+		{\booksubtitlefont The Shadow Of Yesterday}
+		
+		\setupbodyfont[itc-gentium, rm, 48pt]		
+		{\booktitlefont #1}
+		
+		\setupbodyfont[itc-gentium, rm, 11pt]
+		\hairline
+		\vfill
+		\stopalignment	
+}
+
+%-- una serie di macro che riutilizzerò quando farò l'indice, che mappano il sottotitolo
+% direttamente con una entry dell'indice
+
+\def\mySubSubject#1%
+	{\subsubject{#1} \index{#1}}
+	
+\def\mySubSubSubject#1%
+	{\subsubsubject{#1} \index{#1}}
+	
+\setupitemize[headstyle=\bf,before=\blank]
+
+\setuphead[title] % equivalente a H1 -- Senza numero
+[
+	align={center,nothyphenated},
+	style={\eulgiant},
+	after={\blank[5*line]}
+]
+
+\definecolor[BigColorOne][r=.9,g=.7,b=.7]
+\definecolor[BigColorTwo][r=.9,g=.0,b=.0]
+
+\definefont[HugeFont][MonoCaps at 96pt]
+\definefont[BigFontOne][MonoItalic sa 6] %RegularSlanted sa 3(ori)%Sans sa 3:don't work (pb accents)
+\definefont[BigFontTwo][MonoCaps sa 3.5]   %%RegularSlanted
+      
+\def\MyChapterText#1{\rlap{\BigFontOne\BigColorOne#1}#1}
+\def\HeadTitleMax#1#2%
+{\rlap{\BigFontOne\BigColorOne #1}#2}
+
+\def\DWTitle#1%
+{\framed[align=center,backgroundcolor=white,color=black,background=color,width=broad,frame=no]{\BigFontTwo #1}}
+
+\def\DWNum#1%
+{\framed[align=center,width=broad,frame=no,]{\HugeFont{\BigColorTwo	 #1}}}
+
+\def\DWCombo#1#2%
+{\vbox{
+#1
+#2
+}
+}
+
+	 
+	 
+\setuphead
+   [chapter]
+   [align={center,nothyphenated},
+   page=no,
+   before={\page},
+   after={\column},
+   command={\DWCombo},
+   deepnumbercommand={\DWNum},
+   deeptextcommand={\DWTitle}]
+	
+
+\setuphead[section] % equivalente a H2
+[
+	align={flushleft, nothyphenated, verytolerant},
+	after={\blank[4pt]},	
+	before={\blank[6pt]},	
+	number=no,
+	page=no,
+	style=\hii % da notare che uso il font definito con \font\eulb più sopra. 
+]   
+
+
+\setuphead[subsection] % equivalente a H3
+[
+	number=no,
+	page=no,
+	align={flushleft, nothyphenated, verytolerant},
+	before={\blank[6pt]},
+	after={\blank[2pt]},			
+	style=\hiii
+]   
+
+\setuphead[subsubsection] % equivalente a H4
+[
+	align={flushleft, nothyphenated, verytolerant},
+	before={\blank[6pt]},	
+	number=no,
+	after={\blank[2pt]},	
+	style=\hiv
+] 
+
+\definelist[chapter]  % come definisco la lista dei capitoli, sottocapitoli, sottotsottocapitoli
+\setuplist[chapter][alternative=c,before=\blank,after=\blank,style=\eulbig]
+
+\setuplist[subject][alternative=d]
+
+\definelist[subsubject]
+\setuplist[subsubject][alternative=d]
+
+
+\definecombinedlist
+[contents][chapter,subject]
+[level=subject]
+
+\setuppagenumbering[command=\mypagenumber,location={inmargin,text},alternative=doublesided]
+
+\setupframedtexts[
+	background=color,
+	backgroundcolor=grigino,
+	frame=off]
+
+\setuptables[
+	bodyfont=8pt
+]
+
+\setuppagenumbering[alternative=doublesided]
+\definepapersize[halfhybrid][width=5.5in,height=21cm]
+\definepapersize[hybrid][width=21cm,height=11in]
+\definepapersize[ultrabook][width=13.66in,height=7.68in]
+\definepapersize[notebook][width=12.8in,height=8in]
+\definepapersize[ipad][width=10.24in,height=7.68in]
+\setuppapersize[hybrid][hybrid] % this is default and may be omitted 	
+\setuplayout
+[grid=yes,
+leftmargin=17.5mm,
+rightmargin=12.5mm,
+leftmargindistance=2.5mm,
+rightmargindistance=2.5mm,
+backspace=20mm,
+cutspace=15mm,
+header=5mm,
+footer=7mm,
+height=middle,
+footerdistance=5mm,
+headerdistance=3mm,
+topspace=8mm,
+bottomspace=10mm,
+width=middle]
+
+\def\mypagenumber#1%
+{{\eulbig #1}}
+
+\definetextbackground[intro]
+[backgroundcolor=grigino,
+backgroundoffset=0.1cm,
+offset=0.1cm,
+frame=off,
+location=paragraph,
+color=black]
+
+\language[en]
+
+\definetextbackground[intro2]
+[backgroundcolor=grigino2,
+backgroundoffset=0.1cm,
+offset=0.1cm,
+frame=off,
+location=paragraph,
+color=black]
+
+% \defineoverlay[log][{\externalfigure[sfondo_rene.pdf][width=\overlaywidth,height=\overlayheight]}] 
+% \defineoverlay[log1][{\externalfigure[sfondo.pdf][width=\overlaywidth,height=\overlayheight]}] 
+% \setupbackgrounds[page][background=log]
+
+
+\setupcolors[state=start]
+\definecolor[gray80][r=.8,g=.8,b=.8]
+\definecolor[backx][r=.9,g=.9,b=.9]
+\definecolor[backred][r=.9,g=.3,b=.0]
+
+\setupTABLE[row][first][background=color,backgroundcolor=backx,bodyfont=8pt,style={\tfb\tfx}]
+\setupTABLE[background=color,frame=off,framecolor=white,bodyfont=8pt,style=\tfx]
+\setupTABLE[row][odd][background=color,backgroundcolor=backx,bodyfont=8pt,style=\tfx]
+\setupTABLE[option=stretch,bodyfont=8pt,style=\tfx]
+
+\define[1]\exampleitem{
+\blank[2pt]
+{\backred{#1}}
+\blank[2pt]
+}
+
+\setuppagenumbering[alternative=doublesided]
+
+\setupheadertexts[]
+\setupheadertexts[\setups{text a}][][][\setups{text b}]
+
+\startsetups[text a]
+
+  \rlap{\em \getmarking[chapter]}
+  \hfill
+  \llap{\em \getmarking[section]}
+\stopsetups
+
+\startsetups[text b]
+  \rlap{\em \getmarking[section]}
+  \hfill
+  \llap{\em \getmarking[chapter]}
+\stopsetups
+
+\setupfootertexts[subsubject]
+
+\widowpenalty = 5000
+\clubpenalty = 5000
+
+
+%----------------pagebackground----------------------------------------
+\defineoverlay[bgright][{\externalfigure[right_background.jpg][width=\overlaywidth,height=\overlayheight]}] 
+\defineoverlay[bgleft][{\externalfigure[left_background.jpg][width=\overlaywidth,height=\overlayheight]}] 
+\defineoverlay[bgsbright][{\externalfigure[right_background.jpg][width=\overlaywidth,height=\overlayheight]}] 
+\defineoverlay[bgsbleft][{\externalfigure[left_background.jpg][width=\overlaywidth,height=\overlayheight]}] 
+\defineoverlay[bgintro][{\externalfigure[background-intro.jpg][width=\overlaywidth,height=\overlayheight]}] 
+\defineoverlay[booktitle][{\externalfigure[booktitle.jpg][width=\overlaywidth,height=\overlayheight]}] 
+%----------------pagebackground----------------------------------------
+
+
+
+%----------------chapter thumb-----------------------------------
+% questo e' codice TeX di alto livello, scritto da Hans Hagen di
+% ConTeXt. L'ho preso e lievemente modificato
+
+\unprotected \def\rawsectionnumber#1{\countervalue{\??se#1}} % will be in kernel
+
+\setuppagenumbering
+   [alternative=doublesided]
+
+\setupcolors
+   [state=start]
+
+
+\defineoverlay
+   [thumbs]
+   [\setups{thumbs}]
+
+\def\NOfChapters{45} % i need to make this one available
+
+\startsetups thumbs
+     \definemeasure[thumbheight][\dimexpr\paperheight/\NOfChapters\relax]
+     \vbox{ 			%definisco un vbox per contenere più elementi verticali in uno.
+     \vskip 7cm		%passo di 7cm
+     \hbox{				
+     \vbox to \paperheight \bgroup
+         \vskip \rawsectionnumber{section-2} \measure{thumbheight}
+         \vskip -1                           \measure{thumbheight}
+         \doifoddpageelse\hfill\donothing
+         \framed
+             [background=color,
+              backgroundcolor=darkred,
+              frame=off,
+              foregroundcolor=white,
+              height=\measure{thumbheight},width=1cm]
+             {\eulbig \rawsectionnumber{section-2}}
+         \doifoddpageelse\donothing\hfill
+         \vss
+     \egroup
+}}
+\stopsetups
+
+
+\defineparagraphs[MonsterName][n=1,frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[MonsterDescription][n=1,frame=off,offset=none,width=broad,style={\rmit},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[MonsterQualities][n=1,frame=off,offset=none,width=broad,style={\rmbf},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[BasicMoveName][n=1,frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[Instruction][n=1,frame=off,offset=none,width=broad,style={\ss},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[Instructions][n=1,frame=off,offset=none,width=broad,style={\ss},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[InstructionsAfterHeader][n=1,frame=off,offset=none,width=broad,style={\ss},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[SpellName][n=1,frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[SpellDescription][n=1,frame=off,offset=none,width=broad,style={\rmit},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[Requirements][n=1,frame=off,offset=none,width=broad,style={\rmit},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineframedtext[Example][frame=on,offset=4pt,width=broad,style={\rmit},strut=no]
+\def\CMTags#1{{\ssit #1}}
+
+\def\CMSpellName#1{{\ssbf #1}}
+%\setupindenting[medium,first,yes]
+\parskip=4pt

@@ -5,8 +5,6 @@
 \loadmapfile[texnansi-open-dwfonts.map]
 
 
-
-
 \starttypescript[serif][vollkorn-serif][texnansi]
 	\definefontsynonym[VollkornSerifRegular][texnansi-Vollkorn-Regular][encoding=texnansi]
 	\definefontsynonym[VollkornSerifBold][texnansi-Vollkorn-Bold][encoding=texnansi]
@@ -84,16 +82,36 @@
 
 
 \usetypescript[fantasy]
-\setupbodyfont[fantasy,rm,11pt]
+\setupbodyfont[fantasy,rm,10pt]
 
 
+% uncomment these line to activate microtypography
+
+% \setupfontsynonym[Sans][handling=highquality]
+% \setupfontsynonym[SansBold][handling=highquality]
+% \setupfontsynonym[SansItalic][handling=highquality]
+% \setupfontsynonym[SansBoldItalic][handling=highquality]
+% \setupfontsynonym[SansSlanted][handling=highquality]
+% \setupfontsynonym[SansBoldSlanted][handling=highquality]
+% \setupfontsynonym[SansSmallCaps][handling=highquality]
+% \setupfontsynonym[Serif][handling=highquality]
+% \setupfontsynonym[SerifBold][handling=highquality]
+% \setupfontsynonym[SerifItalic][handling=highquality]
+% \setupfontsynonym[SerifBoldItalic][handling=highquality]
+% \setupfontsynonym[SerifSlanted][handling=highquality]
+% \setupfontsynonym[SerifBoldSlanted][handling=highquality]
+% \setupfontsynonym[SerifSmallCaps][handling=highquality]
+
+% \setupfonthandling[hz][min=0, max=90, step=5]
+% \setupalign[hanging,hz,spacing]
 
 \setupinterlinespace
 [height=.72,
 depth=.28,
 top=1.0,
 bottom=0.4,
-line=3ex]
+line=2.7ex]
+
 
 % definizione di una serie di sinonimi per cambiare font in maniera indiretta. Ad esempio:
 % {\eulbigtitle Ciccio} -> mostrerà Ciccio reso in Immortal, corpo 18
@@ -126,6 +144,7 @@ line=3ex]
 \definecolor[grigino2][r=1,g=.5,b=.1]
 \definecolor[rossoscuro][r=0.66,g=.1,b=.1]
 
+\def\reallynobreak{\unskip\penalty 10000}
 
 %----------- macro per definire il titolo di un "libro" -- rulebook e sourcebook
 \def\BookTitle#1
@@ -168,7 +187,7 @@ line=3ex]
 ]
 
 \definecolor[BigColorOne][r=.9,g=.7,b=.7]
-\definecolor[BigColorTwo][r=.9,g=.0,b=.0]
+\definecolor[BigColorTwo][r=.66,g=.0,b=.0]
 
 \definefont[HugeFont][MonoCaps at 96pt]
 \definefont[BigFontOne][MonoItalic sa 6] %RegularSlanted sa 3(ori)%Sans sa 3:don't work (pb accents)
@@ -208,7 +227,7 @@ line=3ex]
 [
 	align={flushleft, nothyphenated, verytolerant},
 	after={\blank[4pt]},	
-	before={\blank[6pt]},	
+	before={\reallynobreak\blank[6pt]},	
 	number=no,
 	page=no,
 	style=\hii % da notare che uso il font definito con \font\eulb più sopra. 
@@ -221,7 +240,7 @@ line=3ex]
 	page=no,
 	align={flushleft, nothyphenated, verytolerant},
 	before={\blank[6pt]},
-	after={\blank[2pt]},			
+	after={\reallynobreak\blank[2pt]},			
 	style=\hiii
 ]   
 
@@ -230,7 +249,7 @@ line=3ex]
 	align={flushleft, nothyphenated, verytolerant},
 	before={\blank[6pt]},	
 	number=no,
-	after={\blank[2pt]},	
+	after={\reallynobreak\blank[2pt]},	
 	style=\hiv
 ] 
 
@@ -401,19 +420,19 @@ color=black]
 \stopsetups
 
 
-\defineparagraphs[MonsterName][n=1,frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[MonsterName][n=1,frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\blank[4pt]},after={\nowhitespace}]
 \defineparagraphs[MonsterDescription][n=1,frame=off,offset=none,width=broad,style={\rmit},strut=no,before={\nowhitespace},after={\nowhitespace}]
 \defineparagraphs[MonsterQualities][n=1,frame=off,offset=none,width=broad,style={\rmbf},strut=no,before={\nowhitespace},after={\nowhitespace}]
 \defineparagraphs[BasicMoveName][n=1,frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\nowhitespace},after={\nowhitespace}]
 \defineparagraphs[Instruction][n=1,frame=off,offset=none,width=broad,style={\ss},strut=no,before={\nowhitespace},after={\nowhitespace}]
 \defineparagraphs[Instructions][n=1,frame=off,offset=none,width=broad,style={\ss},strut=no,before={\nowhitespace},after={\nowhitespace}]
 \defineparagraphs[InstructionsAfterHeader][n=1,frame=off,offset=none,width=broad,style={\ss},strut=no,before={\nowhitespace},after={\nowhitespace}]
-\defineparagraphs[SpellName][n=1,frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[SpellName][n=1,align={raggedleft},frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\blank[4pt]},after={\nowhitespace}]
 \defineparagraphs[SpellDescription][n=1,frame=off,offset=none,width=broad,style={\rmit},strut=no,before={\nowhitespace},after={\nowhitespace}]
 \defineparagraphs[Requirements][n=1,frame=off,offset=none,width=broad,style={\rmit},strut=no,before={\nowhitespace},after={\nowhitespace}]
 \defineframedtext[Example][frame=on,offset=4pt,width=broad,style={\rmit},strut=no]
-\def\CMTags#1{{\ssit #1}}
 
-\def\CMSpellName#1{{\ssbf #1}}
+\def\CMTags#1{{\ss{\BigColorTwo #1}}}
+\def\CMSpellName#1{{\ssbf{\BigColorTwo #1}}}
 %\setupindenting[medium,first,yes]
 \parskip=4pt

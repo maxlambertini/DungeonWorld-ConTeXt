@@ -1,0 +1,1 @@
+texexec dwpocket.tex

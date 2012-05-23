@@ -4,5 +4,5 @@
 *.tuo
 *.mp
 /tex/*.pdf
-temp/**/*
+temp/*
 

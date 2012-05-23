@@ -5,6 +5,8 @@ import glob
 import codecs
 from xml.dom.minidom import *
 
+tags_to_div = ["Body","Story","Root"]
+
 impl = getDOMImplementation()
 domDest = impl.createDocument(None,"body",None)
 with open("filelist.txt","r") as dataSrc:
@@ -16,16 +18,14 @@ with open("filelist.txt","r") as dataSrc:
 			domSrc = parse(xmlIn)
 			elems = domSrc.getElementsByTagName("Root")
 			for elem in elems:
-				for child in elem.childNodes:
-					w = child.nodeName
-					if w == "Body" or w  == "Story":
-						for child1 in child.childNodes:
-							domDest.documentElement.appendChild(child1)
-					else:
-						domDest.documentElement.appendChild(child)
+				domDest.documentElement.appendChild(elem)
+		print "processed ", file
 			
 
-data= domDest.getElementsByTagName("body")[0].toprettyxml(encoding="utf-8")
+data= domDest.getElementsByTagName("body")[0].toxml(encoding="utf-8")
+for tag in tags_to_div:
+	data = data.replace("<"+tag, "<div")
+	data = data.replace("</"+tag, "</div")
 data=data.replace("aid:pstyle","class")
 data=data.replace("aid:cstyle","class")
 

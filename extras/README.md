@@ -8,4 +8,4 @@ here: https://github.com/maxlambertini/xhtml2ctx
 
 * Copy `dwjoiner.py` and `filelist.txt` where the original DungeonWorld XML are.
 * Launch `dwjoiner.py`
-* You'll get a big file named `dw_big.xml`. Feed this file to XHTML2CTX to get ConTeXt files. 
+* You'll get a big file named `dw_full.html`. Feed this file to XHTML2CTX to get ConTeXt files. 

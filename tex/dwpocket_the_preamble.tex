@@ -144,7 +144,7 @@ line=2.7ex]
 \definecolor[grigino2][r=1,g=.5,b=.1]
 \definecolor[rossoscuro][r=0.66,g=.1,b=.1]
 
-\def\reallynobreak{\unskip\penalty 10000}
+\def\reallynobreak{\unskip\penalty 100000}
 
 %----------- macro per definire il titolo di un "libro" -- rulebook e sourcebook
 \def\BookTitle#1
@@ -226,8 +226,8 @@ line=2.7ex]
 \setuphead[section] % equivalente a H2
 [
 	align={flushleft, nothyphenated, verytolerant},
-	after={\blank[4pt]},	
-	before={\reallynobreak\blank[6pt]},	
+	before={\testpage[10][5cm]},	
+	after={\blank[2pt]},	
 	number=no,
 	page=no,
 	style=\hii % da notare che uso il font definito con \font\eulb più sopra. 
@@ -239,17 +239,17 @@ line=2.7ex]
 	number=no,
 	page=no,
 	align={flushleft, nothyphenated, verytolerant},
-	before={\blank[6pt]},
-	after={\reallynobreak\blank[2pt]},			
+	before={\testpage[10][5cm]},
+	after={\blank[2pt]},	
 	style=\hiii
 ]   
 
 \setuphead[subsubsection] % equivalente a H4
 [
 	align={flushleft, nothyphenated, verytolerant},
-	before={\blank[6pt]},	
+	before={\testpage[10][5cm]},	
+	after={\blank[2pt]},	
 	number=no,
-	after={\reallynobreak\blank[2pt]},	
 	style=\hiv
 ] 
 

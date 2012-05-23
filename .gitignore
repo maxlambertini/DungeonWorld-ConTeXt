@@ -1,0 +1,8 @@
+*.tmp
+*.tui
+*.log
+*.tuo
+*.mp
+/tex/*.pdf
+temp/**/*
+

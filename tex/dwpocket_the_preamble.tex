@@ -102,9 +102,6 @@
  \setupfontsynonym[SerifBoldSlanted][handling=highquality]
  \setupfontsynonym[SerifSmallCaps][handling=highquality]
 
-% \setupfonthandling[hz][min=0, max=90, step=5]
-% \setupalign[hanging,hz,spacing]
-
 \setupinterlinespace
 [height=.72,
 depth=.28,
@@ -113,78 +110,32 @@ bottom=0.4,
 line=2.7ex]
 
 
-% definizione di una serie di sinonimi per cambiare font in maniera indiretta. Ad esempio:
-% {\eulbigtitle Ciccio} -> mostrerà Ciccio reso in Immortal, corpo 18
-% ----------------------------------------------------------------------------------------
 \definefont[hi][MonoBold sa 3]
 \definefont[hii][MonoBold sa 2]
 \definefont[hiii][MonoBold sa 1.7]
 \definefont[hiv][MonoBold sa 1.4]
 
 
-\definefont[legacy][SansBold]
-\definefont[legacyb][SansBold]
-\definefont[eul][SansBold]
-\definefont[eub][SansBold]
-\definefont[eulb][SansBold at 12pt]
-\definefont[eulgiant][SerifBold at 36pt]
-\definefont[eulbig][SansBold at 12pt]
-\definefont[eulbignorm][SansBold at 10pt]
-\definefont[eulbigit][SansBold]
-\definefont[eultitle][SansBold at 14pt]
-\definefont[eulbiggie][SansBold at 72pt]
-\definefont[eulbiggiex][SansBold at 24pt]
-\definefont[booksubtitlefont][SansBold at 24pt]
-\definefont[booktitlefont][SansBold at 48pt]
-
-
-%-------- definisco dei colori
-\setupcolors[state=start]
-\definecolor[grigino][r=.9,g=.9,b=.9]
-\definecolor[grigino2][r=1,g=.5,b=.1]
-\definecolor[rossoscuro][r=0.66,g=.1,b=.1]
-
 \def\reallynobreak{\unskip\penalty 100000}
 
-%----------- macro per definire il titolo di un "libro" -- rulebook e sourcebook
+%
 \def\BookTitle#1
 	{
 		\page[odd] % titolo su una nuova pagina DISPARI
-		\setupbackgrounds[rightpage][background=color,backgroundcolor=grigino]
-		\setupbackgrounds[leftpage][background=color,backgroundcolor=grigino]
 		\vskip 6cm
 		\hairline
 		
 		\startalignment[flushright]
-		\setupbodyfont[itc-gentium, rm, 24pt]
-		{\booksubtitlefont The Shadow Of Yesterday}
+		\setupbodyfont[rm, 48pt]		
+		{\booktitlefont DungeonWorld}
 		
-		\setupbodyfont[itc-gentium, rm, 48pt]		
-		{\booktitlefont #1}
-		
-		\setupbodyfont[itc-gentium, rm, 11pt]
+		\setupbodyfont[rm, 11pt]
 		\hairline
 		\vfill
 		\stopalignment	
+		\page[even]
 }
 
-%-- una serie di macro che riutilizzerò quando farò l'indice, che mappano il sottotitolo
-% direttamente con una entry dell'indice
-
-\def\mySubSubject#1%
-	{\subsubject{#1} \index{#1}}
-	
-\def\mySubSubSubject#1%
-	{\subsubsubject{#1} \index{#1}}
-	
-\setupitemize[headstyle=\bf,before=\blank]
-
-\setuphead[title] % equivalente a H1 -- Senza numero
-[
-	align={center,nothyphenated},
-	style={\eulgiant},
-	after={\blank[5*line]}
-]
 
 \definecolor[BigColorOne][r=.9,g=.7,b=.7]
 \definecolor[BigColorTwo][r=.66,g=.0,b=.0]
@@ -204,11 +155,12 @@ line=2.7ex]
 {\framed[align=center,width=broad,frame=no,]{\HugeFont{\BigColorTwo	 #1}}}
 
 \def\DWCombo#1#2%
-{\vbox{
-#1
-#2
-}
-}
+{\vbox
+	{
+		#1
+		#2
+	}
+}	
 
 	 
 	 
@@ -223,18 +175,18 @@ line=2.7ex]
    deeptextcommand={\DWTitle}]
 	
 
-\setuphead[section] % equivalente a H2
+\setuphead[section] 
 [
 	align={flushleft, nothyphenated, verytolerant},
 	before={\testpage[10][5cm]},	
 	after={\blank[2pt]},	
 	number=no,
 	page=no,
-	style=\hii % da notare che uso il font definito con \font\eulb più sopra. 
+	style=\hii 
 ]   
 
 
-\setuphead[subsection] % equivalente a H3
+\setuphead[subsection] 
 [
 	number=no,
 	page=no,
@@ -244,7 +196,7 @@ line=2.7ex]
 	style=\hiii
 ]   
 
-\setuphead[subsubsection] % equivalente a H4
+\setuphead[subsubsection] 
 [
 	align={flushleft, nothyphenated, verytolerant},
 	before={\testpage[10][5cm]},	
@@ -253,8 +205,8 @@ line=2.7ex]
 	style=\hiv
 ] 
 
-\definelist[chapter]  % come definisco la lista dei capitoli, sottocapitoli, sottotsottocapitoli
-\setuplist[chapter][alternative=c,before=\blank,after=\blank,style=\eulbig]
+\definelist[chapter]  
+\setuplist[chapter][alternative=c,before=\blank,after=\blank,style=\hii]
 
 \setuplist[subject][alternative=d]
 
@@ -266,16 +218,13 @@ line=2.7ex]
 [contents][chapter,subject]
 [level=subject]
 
+\def\mypagenumber#1%
+{{\hiv #1}}
+
+
 \setuppagenumbering[command=\mypagenumber,location={inmargin,text},alternative=doublesided]
 
-\setupframedtexts[
-	background=color,
-	backgroundcolor=grigino,
-	frame=off]
-
-\setuptables[
-	bodyfont=8pt
-]
+\setuptables[bodyfont=9pt]
 
 \setuppagenumbering[alternative=doublesided]
 \definepapersize[halfhybrid][width=5.5in,height=21cm]
@@ -283,7 +232,7 @@ line=2.7ex]
 \definepapersize[ultrabook][width=13.66in,height=7.68in]
 \definepapersize[notebook][width=12.8in,height=8in]
 \definepapersize[ipad][width=10.24in,height=7.68in]
-\setuppapersize[hybrid][hybrid] % this is default and may be omitted 	
+\setuppapersize[hybrid][hybrid] % this is default 	
 \setuplayout
 [grid=yes,
 leftmargin=17.5mm,
@@ -301,30 +250,8 @@ topspace=8mm,
 bottomspace=10mm,
 width=middle]
 
-\def\mypagenumber#1%
-{{\eulbig #1}}
-
-\definetextbackground[intro]
-[backgroundcolor=grigino,
-backgroundoffset=0.1cm,
-offset=0.1cm,
-frame=off,
-location=paragraph,
-color=black]
 
 \language[en]
-
-\definetextbackground[intro2]
-[backgroundcolor=grigino2,
-backgroundoffset=0.1cm,
-offset=0.1cm,
-frame=off,
-location=paragraph,
-color=black]
-
-% \defineoverlay[log][{\externalfigure[sfondo_rene.pdf][width=\overlaywidth,height=\overlayheight]}] 
-% \defineoverlay[log1][{\externalfigure[sfondo.pdf][width=\overlaywidth,height=\overlayheight]}] 
-% \setupbackgrounds[page][background=log]
 
 
 \setupcolors[state=start]
@@ -363,62 +290,8 @@ color=black]
 
 \setupfootertexts[subsubject]
 
-\widowpenalty = 5000
-\clubpenalty = 5000
-
-
-%----------------pagebackground----------------------------------------
-\defineoverlay[bgright][{\externalfigure[right_background.jpg][width=\overlaywidth,height=\overlayheight]}] 
-\defineoverlay[bgleft][{\externalfigure[left_background.jpg][width=\overlaywidth,height=\overlayheight]}] 
-\defineoverlay[bgsbright][{\externalfigure[right_background.jpg][width=\overlaywidth,height=\overlayheight]}] 
-\defineoverlay[bgsbleft][{\externalfigure[left_background.jpg][width=\overlaywidth,height=\overlayheight]}] 
-\defineoverlay[bgintro][{\externalfigure[background-intro.jpg][width=\overlaywidth,height=\overlayheight]}] 
-\defineoverlay[booktitle][{\externalfigure[booktitle.jpg][width=\overlaywidth,height=\overlayheight]}] 
-%----------------pagebackground----------------------------------------
-
-
-
-%----------------chapter thumb-----------------------------------
-% questo e' codice TeX di alto livello, scritto da Hans Hagen di
-% ConTeXt. L'ho preso e lievemente modificato
-
-\unprotected \def\rawsectionnumber#1{\countervalue{\??se#1}} % will be in kernel
-
-\setuppagenumbering
-   [alternative=doublesided]
-
-\setupcolors
-   [state=start]
-
-
-\defineoverlay
-   [thumbs]
-   [\setups{thumbs}]
-
-\def\NOfChapters{45} % i need to make this one available
-
-\startsetups thumbs
-     \definemeasure[thumbheight][\dimexpr\paperheight/\NOfChapters\relax]
-     \vbox{ 			%definisco un vbox per contenere più elementi verticali in uno.
-     \vskip 7cm		%passo di 7cm
-     \hbox{				
-     \vbox to \paperheight \bgroup
-         \vskip \rawsectionnumber{section-2} \measure{thumbheight}
-         \vskip -1                           \measure{thumbheight}
-         \doifoddpageelse\hfill\donothing
-         \framed
-             [background=color,
-              backgroundcolor=darkred,
-              frame=off,
-              foregroundcolor=white,
-              height=\measure{thumbheight},width=1cm]
-             {\eulbig \rawsectionnumber{section-2}}
-         \doifoddpageelse\donothing\hfill
-         \vss
-     \egroup
-}}
-\stopsetups
-
+\widowpenalty = 15000
+\clubpenalty = 15000
 
 \defineparagraphs[MonsterName][n=1,frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\blank[4pt]},after={\nowhitespace}]
 \defineparagraphs[MonsterDescription][n=1,frame=off,offset=none,width=broad,style={\rmit},strut=no,before={\nowhitespace},after={\nowhitespace}]
@@ -434,5 +307,5 @@ color=black]
 
 \def\CMTags#1{{\ss{\BigColorTwo #1}}}
 \def\CMSpellName#1{{\ssbf{\BigColorTwo #1}}}
-%\setupindenting[medium,first,yes]
+
 \parskip=4pt

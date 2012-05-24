@@ -1,21 +1,312 @@
 
 \enableregime[utf]
 \useregime[utf]
-\setupframedtexts[frame=off,offset=none]
 
-\defineframedtext[MonsterName][frame=off,offset=none,width=broad,style={\rmbf},strut=no,before={\nowhitespace},after={\nowhitespace}]
-\defineframedtext[MonsterDescription][frame=off,offset=none,width=broad,style={\rmbi},strut=no,before={\nowhitespace},after={\nowhitespace}]
-\defineframedtext[MonsterQualities][frame=off,offset=none,width=broad,style={\rmit},strut=no,before={\nowhitespace},after={\nowhitespace}]
-\defineframedtext[BasicMoveName][frame=off,offset=none,width=broad,style={\rmsc},strut=no,before={\nowhitespace},after={\nowhitespace}]
-\defineframedtext[Instruction][frame=off,offset=none,width=broad,style={\rmsl},strut=no,before={\nowhitespace},after={\nowhitespace}]
-\defineframedtext[Instructions][frame=off,offset=none,width=broad,style={\rm},strut=no,before={\nowhitespace},after={\nowhitespace}]
-\defineframedtext[InstructionsAfterHeader][frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\nowhitespace},after={\nowhitespace}]
-\defineframedtext[SpellName][frame=off,offset=none,width=broad,style={\ssbi},strut=no,before={\nowhitespace},after={\nowhitespace}]
-\defineframedtext[SpellDescription][frame=off,offset=none,width=broad,style={\ssit},strut=no,before={\nowhitespace},after={\nowhitespace}]
-\defineframedtext[Requirements][frame=off,offset=none,width=broad,style={\sssc},strut=no,before={\nowhitespace},after={\nowhitespace}]
-\defineframedtext[Example][frame=off,offset=none,width=broad,style={\sssl},strut=no,before={\nowhitespace},after={\nowhitespace}]
-\def\CMSpellName#1{#1}
-
-\def\CMTags#1{#1}
+\loadmapfile[texnansi-open-dwfonts.map]
 
 
+\starttypescript[serif][vollkorn-serif][texnansi]
+	\definefontsynonym[VollkornSerifRegular][texnansi-Vollkorn-Regular][encoding=texnansi]
+	\definefontsynonym[VollkornSerifBold][texnansi-Vollkorn-Bold][encoding=texnansi]
+	\definefontsynonym[VollkornSerifBolditalic][texnansi-Vollkorn-BoldItalic][encoding=texnansi]
+	\definefontsynonym[VollkornSerifItalic][texnansi-Vollkorn-Italic][encoding=texnansi]
+	\definefontsynonym[VollkornSerifSlanted][texnansi-Vollkorn-Italic][encoding=texnansi]
+	\definefontsynonym[VollkornSerifBoldslanted][texnansi-Vollkorn-BoldItalic][encoding=texnansi]
+	\definefontsynonym[VollkornSerifCaps][texnansi-Vollkorn-Bold][encoding=texnansi]
+	\stoptypescript
+
+
+\starttypescript[serif][vollkorn-serif][name]
+	\usetypescript[serif,fallback]
+	\definefontsynonym[Serif][VollkornSerifRegular]
+	\definefontsynonym[SerifBold][VollkornSerifBold]
+	\definefontsynonym[SerifBoldItalic][VollkornSerifBolditalic]
+	\definefontsynonym[SerifItalic][VollkornSerifItalic]
+	\definefontsynonym[SerifSlanted][VollkornSerifSlanted]
+	\definefontsynonym[SerifBoldSlanted][VollkornSerifBoldslanted]
+	\definefontsynonym[SerifCaps][VollkornSerifCaps]
+\stoptypescript
+
+\starttypescript[sans][sigvar-sans][ec]
+	\definefontsynonym[SigvarSansRegular][texnansi-OpenSansRegular][encoding=ec]
+	\definefontsynonym[SigvarSansBold][texnansi-OpenSansBold][encoding=ec]
+	\definefontsynonym[SigvarSansBolditalic][texnansi-OpenSansBoldItalic][encoding=ec]
+	\definefontsynonym[SigvarSansItalic][texnansi-OpenSanItalic][encoding=ec]
+	\definefontsynonym[SigvarSansSlanted][texnansi-OpenSanItalic][encoding=ec]
+	\definefontsynonym[SigvarSansBoldslanted][texnansi-OpenSansBoldItalic][encoding=ec]
+	\definefontsynonym[SigvarSansCaps][texnansi-OpenSansBold][encoding=ec]
+	\stoptypescript
+
+
+\starttypescript[sans][sigvar-sans][name]
+	\usetypescript[sans,fallback]
+	\definefontsynonym[Sans][SigvarSansRegular]
+	\definefontsynonym[SansBold][SigvarSansBold]
+	\definefontsynonym[SansBoldItalic][SigvarSansBolditalic]
+	\definefontsynonym[SansItalic][SigvarSansItalic]
+	\definefontsynonym[SansSlanted][SigvarSansSlanted]
+	\definefontsynonym[SansBoldSlanted][SigvarSansBoldslanted]
+	\definefontsynonym[SansCaps][SigvarSansCaps]
+\stoptypescript
+
+\starttypescript[mono][display-mono][texnansi]
+	\definefontsynonym[DisplayMonoRegular][texnansi-BOYCOTT][encoding=texnansi]
+	\definefontsynonym[DisplayMonoBold][texnansi-DIRTYEGO][encoding=texnansi]
+	\definefontsynonym[DisplayMonoBolditalic][texnansi-goodluck][encoding=texnansi]
+	\definefontsynonym[DisplayMonoItalic][texnansi-PROPAGAN][encoding=texnansi]
+	\definefontsynonym[DisplayMonoSlanted][texnansi-Deutsch][encoding=texnansi]
+	\definefontsynonym[DisplayMonoBoldslanted][texnansi-Deutsch][encoding=texnansi]
+	\definefontsynonym[DisplayMonoCaps][texnansi-Deutsch][encoding=texnansi]
+	\stoptypescript
+
+
+\starttypescript[mono][display-mono][name]
+	\usetypescript[mono,fallback]
+	\definefontsynonym[Mono][DisplayMonoRegular]
+	\definefontsynonym[MonoBold][DisplayMonoBold]
+	\definefontsynonym[MonoBoldItalic][DisplayMonoBolditalic]
+	\definefontsynonym[MonoItalic][DisplayMonoItalic]
+	\definefontsynonym[MonoSlanted][DisplayMonoSlanted]
+	\definefontsynonym[MonoBoldSlanted][DisplayMonoBoldslanted]
+	\definefontsynonym[MonoCaps][DisplayMonoCaps]
+\stoptypescript
+
+
+
+\starttypescript[fantasy]
+	\definetypeface[fantasy][tt][mono][display-mono][default][encoding=texnansi]
+	\definetypeface[fantasy][ss][sans][sigvar-sans][default][encoding=ec]
+	\definetypeface[fantasy][rm][serif][vollkorn-serif][default][encoding=texnansi]
+\stoptypescript
+
+
+
+\usetypescript[fantasy]
+\setupbodyfont[fantasy,rm,10pt]
+
+
+% uncomment these line to activate microtypography
+
+ \setupfontsynonym[Sans][handling=highquality]
+ \setupfontsynonym[SansBold][handling=highquality]
+ \setupfontsynonym[SansItalic][handling=highquality]
+ \setupfontsynonym[SansBoldItalic][handling=highquality]
+% \setupfontsynonym[SansSlanted][handling=highquality]
+% \setupfontsynonym[SansBoldSlanted][handling=highquality]
+% \setupfontsynonym[SansSmallCaps][handling=highquality]
+ \setupfontsynonym[Serif][handling=highquality]
+ \setupfontsynonym[SerifBold][handling=highquality]
+ \setupfontsynonym[SerifItalic][handling=highquality]
+ \setupfontsynonym[SerifBoldItalic][handling=highquality]
+ \setupfontsynonym[SerifSlanted][handling=highquality]
+ \setupfontsynonym[SerifBoldSlanted][handling=highquality]
+ \setupfontsynonym[SerifSmallCaps][handling=highquality]
+
+\setupinterlinespace
+[height=.72,
+depth=.28,
+top=1.0,
+bottom=0.4,
+line=2.7ex]
+
+
+\definefont[booktitlefont][MonoBold sa 3]
+\definefont[hi][MonoBold sa 3]
+\definefont[hii][MonoBold sa 2]
+\definefont[hiii][MonoBold sa 1.7]
+\definefont[hiv][MonoBold sa 1.4]
+
+
+\def\reallynobreak{\unskip\penalty 100000}
+
+%
+\def\BookTitle#1
+	{
+		\page[odd] % titolo su una nuova pagina DISPARI
+		\vskip 6cm
+		\hairline
+		
+		\startalignment[center]
+		\setupbodyfont[rm, 48pt]		
+		{\booktitlefont Dungeon World}
+		
+		\setupbodyfont[rm, 11pt]
+		\hairline
+		\vfill
+		\stopalignment	
+		\page[even]
+}
+
+
+\definecolor[BigColorOne][r=.9,g=.7,b=.7]
+\definecolor[BigColorTwo][r=.66,g=.0,b=.0]
+
+\definefont[HugeFont][MonoCaps at 96pt]
+\definefont[BigFontOne][MonoItalic sa 6] %RegularSlanted sa 3(ori)%Sans sa 3:don't work (pb accents)
+\definefont[BigFontTwo][MonoCaps sa 3.5]   %%RegularSlanted
+      
+\def\MyChapterText#1{\rlap{\BigFontOne\BigColorOne#1}#1}
+\def\HeadTitleMax#1#2%
+{\rlap{\BigFontOne\BigColorOne #1}#2}
+
+\def\DWTitle#1%
+{\framed[align=center,backgroundcolor=white,color=black,background=color,width=broad,frame=no]{\BigFontTwo #1}}
+
+\def\DWNum#1%
+{\framed[align=center,width=broad,frame=no,]{\HugeFont{\BigColorTwo	 #1}}}
+
+\def\DWCombo#1#2%
+{\vbox
+	{
+		#1
+		#2
+	}
+}	
+
+	 
+	 
+\setuphead
+   [chapter]
+   [align={center,nothyphenated},
+   page=no,
+   before={\page},
+   after={\column},
+   command={\DWCombo},
+   deepnumbercommand={\DWNum},
+   deeptextcommand={\DWTitle}]
+	
+
+\setuphead[section] 
+[
+	align={flushleft, nothyphenated, verytolerant},
+	before={\testpage[10][5cm]},	
+	after={\blank[2pt]},	
+	number=no,
+	page=no,
+	style=\hii 
+]   
+
+
+\setuphead[subsection] 
+[
+	number=no,
+	page=no,
+	align={flushleft, nothyphenated, verytolerant},
+	before={\testpage[10][5cm]},
+	after={\blank[2pt]},	
+	style=\hiii
+]   
+
+\setuphead[subsubsection] 
+[
+	align={flushleft, nothyphenated, verytolerant},
+	before={\testpage[10][5cm]},	
+	after={\blank[2pt]},	
+	number=no,
+	style=\hiv
+] 
+
+\definelist[chapter]  
+\setuplist[chapter][alternative=c,before=\blank,after=\blank,style=\hii]
+
+\setuplist[subject][alternative=d]
+
+\definelist[subsubject]
+\setuplist[subsubject][alternative=d]
+
+
+\definecombinedlist
+[contents][chapter,subject]
+[level=subject]
+
+\def\mypagenumber#1%
+{{\hiv #1}}
+
+
+\setuppagenumbering[command=\mypagenumber,location={inmargin,text},alternative=doublesided]
+
+\setuptables[bodyfont=9pt]
+
+\setuppagenumbering[alternative=doublesided]
+\definepapersize[halfhybrid][width=5.5in,height=21cm]
+\definepapersize[hybrid][width=21cm,height=11in]
+\definepapersize[ultrabook][width=13.66in,height=7.68in]
+\definepapersize[notebook][width=12.8in,height=8in]
+\definepapersize[ipad][width=10.24in,height=7.68in]
+\setuppapersize[hybrid][hybrid] % this is default 	
+\setuplayout
+[grid=yes,
+leftmargin=17.5mm,
+rightmargin=12.5mm,
+leftmargindistance=2.5mm,
+rightmargindistance=2.5mm,
+backspace=20mm,
+cutspace=15mm,
+header=5mm,
+footer=7mm,
+height=middle,
+footerdistance=5mm,
+headerdistance=3mm,
+topspace=8mm,
+bottomspace=10mm,
+width=middle]
+
+
+\language[en]
+
+
+\setupcolors[state=start]
+\definecolor[gray80][r=.8,g=.8,b=.8]
+\definecolor[backx][r=.9,g=.9,b=.9]
+\definecolor[backred][r=.9,g=.3,b=.0]
+
+\setupTABLE[row][first][background=color,backgroundcolor=backx,bodyfont=8pt,style={\tfb\tfx}]
+\setupTABLE[background=color,frame=off,framecolor=white,bodyfont=8pt,style=\tfx]
+\setupTABLE[row][odd][background=color,backgroundcolor=backx,bodyfont=8pt,style=\tfx]
+\setupTABLE[option=stretch,bodyfont=8pt,style=\tfx]
+
+\define[1]\exampleitem{
+\blank[2pt]
+{\backred{#1}}
+\blank[2pt]
+}
+
+\setuppagenumbering[alternative=doublesided]
+
+\setupheadertexts[]
+\setupheadertexts[\setups{text a}][][][\setups{text b}]
+
+\startsetups[text a]
+
+  \rlap{\em \getmarking[chapter]}
+  \hfill
+  \llap{\em \getmarking[section]}
+\stopsetups
+
+\startsetups[text b]
+  \rlap{\em \getmarking[section]}
+  \hfill
+  \llap{\em \getmarking[chapter]}
+\stopsetups
+
+\setupfootertexts[subsubject]
+
+\widowpenalty = 15000
+\clubpenalty = 15000
+
+\defineparagraphs[MonsterName][n=1,frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\blank[4pt]},after={\nowhitespace}]
+\defineparagraphs[MonsterDescription][n=1,frame=off,offset=none,width=broad,style={\rmit},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[MonsterQualities][n=1,frame=off,offset=none,width=broad,style={\rmbf},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[BasicMoveName][n=1,frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[Instruction][n=1,frame=off,offset=none,width=broad,style={\ss},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[Instructions][n=1,frame=off,offset=none,width=broad,style={\ss},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[InstructionsAfterHeader][n=1,frame=off,offset=none,width=broad,style={\ss},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[SpellName][n=1,align={raggedleft},frame=off,offset=none,width=broad,style={\ssbf},strut=no,before={\blank[4pt]},after={\nowhitespace}]
+\defineparagraphs[SpellDescription][n=1,frame=off,offset=none,width=broad,style={\rmit},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineparagraphs[Requirements][n=1,frame=off,offset=none,width=broad,style={\rmit},strut=no,before={\nowhitespace},after={\nowhitespace}]
+\defineframedtext[Example][frame=on,offset=4pt,width=broad,style={\rmit},strut=no]
+
+\def\CMTags#1{{\ss{\BigColorTwo #1}}}
+\def\CMSpellName#1{{\ssbf{\BigColorTwo #1}}}
+
+\parskip=4pt
